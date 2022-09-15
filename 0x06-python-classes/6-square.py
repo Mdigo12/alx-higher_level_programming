@@ -48,9 +48,9 @@ class Square:
         if len(value) < 2:
             raise TypeError(errmsg)
         for i in value:
-            if i < 0:
+            if type(i) != int:
                 raise TypeError(errmsg)
-            elif type(i) != int:
+            elif i < 0:
                 raise TypeError(errmsg)
         self.__position = value
 
