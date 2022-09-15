@@ -44,17 +44,13 @@ class Square:
         errmsg = "position must be a tuple of 2 positive integers"
 
         if type(value) != tuple:
-            self.__position = (0, 0)
             raise TypeError(errmsg)
         if len(value) < 2:
-            self.__position = (0, 0)
             raise TypeError(errmsg)
         for i in value:
             if i < 0:
-                self.__position = (0, 0)
                 raise TypeError(errmsg)
             elif type(i) != int:
-                self.__position = (0, 0)
                 raise TypeError(errmsg)
         self.__position = value
 
