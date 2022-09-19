@@ -76,5 +76,5 @@ class Rectangle:
         to create new object
         """
 
-        rec = "Rectangle(" + str(self.__width) + "," + str(self.__height) + ")"
+        rec = "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
         return rec
