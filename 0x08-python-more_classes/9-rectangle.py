@@ -55,6 +55,11 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @classmethod
+    def square(cls, size=0):
+        """Returns new rectangle with width = height = size"""
+        return Rectangle(size, size)
+
     def area(self):
         """Calculates area of a rectangle"""
         return self.__width * self.__height
@@ -112,10 +117,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """
-        returns a new Rectangle instance with width == height == size
-        """
-        return Rectangle(size, size)
