@@ -54,6 +54,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
+
 class Square(Rectangle):
     """Represents a square as asubclass of Rectangle"""
 
@@ -70,4 +71,3 @@ class Square(Rectangle):
 
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__size, self.__size)
-
