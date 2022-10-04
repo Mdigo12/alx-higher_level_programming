@@ -391,7 +391,6 @@ class TestSquare_stdout(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.__str__(1)
 
-    """
     # Test display method
     def test_display_size(self):
         s = Square(2, 0, 0, 9)
@@ -419,7 +418,6 @@ class TestSquare_stdout(unittest.TestCase):
         s = Square(3, 4, 5, 2)
         with self.assertRaises(TypeError):
             s.display(1)
-    """
 
 class TestSquare_update_args(unittest.TestCase):
     """Unittests for testing update args method of the Square class."""
