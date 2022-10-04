@@ -501,7 +501,6 @@ class TestRectangle_stdout(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.__str__(1)
             
-    """
     # Test display method
     def test_display_width_height(self):
         r = Rectangle(2, 3, 0, 0, 0)
@@ -529,7 +528,6 @@ class TestRectangle_stdout(unittest.TestCase):
         r = Rectangle(5, 1, 2, 4, 7)
         with self.assertRaises(TypeError):
             r.display(1)
-    """
 
 
 class TestRectangle_update_args(unittest.TestCase):

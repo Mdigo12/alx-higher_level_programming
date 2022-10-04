@@ -77,25 +77,12 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """
-        prints in stdout the Rectangle instance with the character #
-        """
-        if self.width == 0 or self.height == 0:
-            print("")
-            return
-
-        while self.y:
-            print("")
-            self.y -= 1
-
+        """ displays a rectangle """
+        rectangle = self.y * "\n"
         for i in range(self.height):
-            for j in range(self.width):
-                if self.x > 0 and j == 0:
-                    for n in range(self.x):
-                        print(" "*self.x, end='')
-                print("#", end="")
-                if j == self.width - 1:
-                    print("")
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
+        print(rectangle, end='')
 
     def __str__(self):
         """Print string rectangle"""
