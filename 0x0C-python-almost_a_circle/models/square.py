@@ -30,7 +30,7 @@ class Square(Rectangle):
     def __str__(self):
         """Overloading the special str method"""
         return "[Square] ({}) {}/{} - {}"\
-            .format(self.id, self.x, self.y, self.size)
+            .format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """update method for class Square"""
