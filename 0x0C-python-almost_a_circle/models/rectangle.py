@@ -84,6 +84,10 @@ class Rectangle(Base):
             print("")
             return
 
+        while self.y:
+            print("")
+            self.y -= 1
+
         for i in range(self.height):
             for j in range(self.width):
                 if self.x > 0 and j == 0:
