@@ -80,9 +80,9 @@ class Rectangle(Base):
         """
         prints in stdout the Rectangle instance with the character #
         """
-        while self.y:
+        if self.width == 0 or self.height == 0:
             print("")
-            self.y -= 1
+            return
 
         for i in range(self.height):
             for j in range(self.width):
