@@ -89,7 +89,7 @@ class Rectangle(Base):
                 if self.x > 0 and j == 0:
                     for n in range(self.x):
                         print(" "*self.x, end='')
-                print("x", end="")
+                print("#", end="")
                 if j == self.width - 1:
                     print("")
 
