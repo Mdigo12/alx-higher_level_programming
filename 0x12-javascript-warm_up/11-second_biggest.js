@@ -8,6 +8,6 @@ if (process.argv.length < 4) {
   for (let i = 2; i < size; i++) {
     ints[i - 2] = parseInt(process.argv[i]);
   }
-  ints.sort(function (a, b) { return b - a });
+  ints.sort(function (a, b) { return b - a; });
   console.log(ints[1]);
 }
