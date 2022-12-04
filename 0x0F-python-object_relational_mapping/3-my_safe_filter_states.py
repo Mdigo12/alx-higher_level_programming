@@ -1,9 +1,6 @@
-#!/usr/bin/python3
-""""lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa
-Usage:./1-filter_states.py <mysql username>
-                           <mysql password>
-                           <database name>
+"""takes in arguments and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument.
+But this time, write one that is safe from MySQL injections
 """
 if __name__ == "__main__":
     import MySQLdb
@@ -16,7 +13,10 @@ if __name__ == "__main__":
             db=sys.argv[3],
             charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute(
+            """SELECT * FROM states
+            WHERE name = %s
+            ORDER BY id ASC""", (sys.argv[4],))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
