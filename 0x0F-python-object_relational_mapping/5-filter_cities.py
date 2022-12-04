@@ -23,6 +23,6 @@ if __name__ == "__main__":
     my_list = []
     for row in query_rows:
         my_list.append(",".join(str(x) for x in row))
-        print(*my_list, sep=", ")
+    print(*my_list, sep=", ")
     cur.close()
     conn.close()
