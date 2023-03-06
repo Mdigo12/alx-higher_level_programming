@@ -9,7 +9,7 @@ if (process.argv.length > 2) {
       console.log(err);
     }
     const charactersURL = JSON.parse(body).characters;
-    console.log(charactersURL);
+    // console.log(charactersURL);
 
     charactersURL.forEach(element => {
       request(element, (err, res, body) => {
