@@ -5,7 +5,7 @@
 // You must use the module request
 
 const request = require('request');
-const characterId = '18';
+// const characterId = '18';
 const apiUrl = process.argv[2];
 
 request.get(apiUrl, (err, res, body) => {
