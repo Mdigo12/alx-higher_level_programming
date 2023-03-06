@@ -15,8 +15,8 @@ request.get(apiUrl, (err, res, body) => {
     //   const moviesWithWedgeAntilles = JSON.parse(body).results.filter(
     //     x => x.characters.find(y => y.match(/\/people\/18\/?$/))
 
-    const moviesWithWedgeAntilles = JSON.parse(body).results.filter(movie => {
-      return movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`);
+    const moviesWithWedgeAntilles = JSON.parse(body).results.filter(film => {
+      return film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`);
     }
     );
 
