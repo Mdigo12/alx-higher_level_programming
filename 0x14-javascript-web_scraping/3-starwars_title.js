@@ -2,7 +2,7 @@
 
 const request = require('request');
 const movieId = process.argv[2];
-const movieUrl = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
+const movieUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 // Send a GET request to the movie endpoint
 request.get(movieUrl, (err, response, body) => {
