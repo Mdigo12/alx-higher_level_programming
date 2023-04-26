@@ -13,13 +13,21 @@ const request = require('request');
 const requestURL = process.argv[2];
 const filePath = process.argv[3];
 
-request.get(requestURL, (error, response, body) => {
-  if (error) {
-    console.log(error);
+// Using params/options to pass to our request func.
+const options = {
+  url: requestURL,
+  // method: 'GET',
+  qs: {} // pass you key value pair of your query string
+
+};
+
+request.get(options, 'utf-8', (err, response, body) => {
+  if (err) {
+    console.log(err);
   } else {
-    fs.writeFile(filePath, body, 'utf-8', (error) => {
-      if (error) {
-        console.log(error);
+    fs.writeFile(filePath, body, 'utf-8', (err) => {
+      if (err) {
+        console.log(err);
       }
     });
   }
