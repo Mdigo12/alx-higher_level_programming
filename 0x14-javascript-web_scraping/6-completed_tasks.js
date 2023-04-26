@@ -10,23 +10,24 @@ A script that computes the number of tasks completed by user id.
 */
 
 const request = require('request');
-const url = process.argv[2];
+const requestURL = process.argv[2];
 
-request.get(url, { json: true }, (error, response, body) => {
-  if (error) {
-    console.log(error);
+request.get(requestURL, (err, response, body) => {
+  if (err) {
+    console.log(err);
     return;
   }
-
-  const tasksCompleted = {};
-  body.forEach((todo) => {
-    if (todo.completed) {
-      if (!tasksCompleted[todo.userId]) {
-        tasksCompleted[todo.userId] = 1;
-      } else {
-        tasksCompleted[todo.userId] += 1;
-      }
+  todos_list = JSON.parse(body);
+  // filter to obtain a list of all completed todos
+  completedTodos = todos_list.filter(todo => todo.completed === true);
+  userCompletedTodos = {} // dict in form of {'userId': sum of completed todos}
+  completedTodos.forEach(todo => {
+    if(!userCompletedTodos[todo.userId]){
+      userCompletedTodos[todo.userId] = 1;
+    } else {
+      userCompletedTodos[todo.userId] += 1;
     }
   });
-  console.log(tasksCompleted);
+  console.log(userCompletedTodos);
 });
+
