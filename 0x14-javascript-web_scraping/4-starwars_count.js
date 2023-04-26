@@ -10,20 +10,32 @@ A script that prints the number of movies where the character â€œWedge Antillesâ
 */
 
 const request = require('request');
-// const characterId = '18';
-const apiUrl = process.argv[2];
+// const qs = require('qs');
+const apiURL = process.argv[2];
 
-request.get(apiUrl, (err, res, body) => {
+// const options = {
+//   url:apiURL,
+//   method:'GET',
+//   qs:{
+//     characters:"https://swapi-api.alx-tools.com/api/people/18/"
+//   }
+// }
+
+request(apiURL, (err, response, body) => {
   if (err) {
-    console.log(err);
+    console.log(err)
   }
-  const moviesWithWedgeAntilles = JSON.parse(body).results.filter(
-    x => x.characters.find(y => y.match(/\/people\/18\/?$/))
+  const movies = JSON.parse(body).results; //returns a list of movies
+  let count = 0;
+  const characterId = 18;
+  // const films18 = movies.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`))
+  // console.log(films18.length)
+  movies.forEach(movie => {
+    if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)){
+      count++;
+    }
 
-    // const moviesWithWedgeAntilles = JSON.parse(body).results.filter(film => {
-    //   return film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`);
-    // }
-  );
+  });
 
-  console.log(moviesWithWedgeAntilles.length);
+  console.log(count)
 });
