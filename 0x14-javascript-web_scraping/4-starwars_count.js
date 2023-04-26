@@ -27,11 +27,11 @@ request(apiURL, (err, response, body) => {
   }
   const movies = JSON.parse(body).results; // returns a list of movies
   let count = 0;
-  const characterId = 18;
   // const films18 = movies.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`))
   // console.log(films18.length)
   movies.forEach(movie => {
-    if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+    const pattern = /\/people\/18\/?$/; // /people/18 with / optional $ marks from end of string
+    if (movie.characters.find(character => character.match(pattern))) {
       count++;
     }
   });
