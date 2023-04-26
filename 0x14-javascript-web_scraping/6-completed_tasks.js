@@ -17,12 +17,12 @@ request.get(requestURL, (err, response, body) => {
     console.log(err);
     return;
   }
-  todos_list = JSON.parse(body);
+  const todosList = JSON.parse(body);
   // filter to obtain a list of all completed todos
-  completedTodos = todos_list.filter(todo => todo.completed === true);
-  userCompletedTodos = {} // dict in form of {'userId': sum of completed todos}
+  const completedTodos = todosList.filter(todo => todo.completed === true);
+  const userCompletedTodos = {}; // dict in form of {'userId': sum of completed todos}
   completedTodos.forEach(todo => {
-    if(!userCompletedTodos[todo.userId]){
+    if (!userCompletedTodos[todo.userId]) {
       userCompletedTodos[todo.userId] = 1;
     } else {
       userCompletedTodos[todo.userId] += 1;
@@ -30,4 +30,3 @@ request.get(requestURL, (err, response, body) => {
   });
   console.log(userCompletedTodos);
 });
-
