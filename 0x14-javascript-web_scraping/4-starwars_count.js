@@ -23,19 +23,17 @@ const apiURL = process.argv[2];
 
 request(apiURL, (err, response, body) => {
   if (err) {
-    console.log(err)
+    console.log(err);
   }
-  const movies = JSON.parse(body).results; //returns a list of movies
+  const movies = JSON.parse(body).results; // returns a list of movies
   let count = 0;
   const characterId = 18;
   // const films18 = movies.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`))
   // console.log(films18.length)
   movies.forEach(movie => {
-    if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)){
+    if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
       count++;
     }
-
   });
-
-  console.log(count)
+  console.log(count);
 });
