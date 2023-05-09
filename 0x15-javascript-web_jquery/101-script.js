@@ -14,19 +14,19 @@
  * You script must work when it imported from the HEAD tag
  */
 
-$(document).ready(function() {
-    // Add new list item
-    $('#add_item').click(() => {
-      $('ul.my_list').append('<li>Item</li>');
-    });
-
-    // Remove last list item
-    $('#remove_item').click(() => {
-      $('ul.my_list li:last-child').remove();
-    });
-
-    // Clear all list items
-    $('#clear_list').click(() => {
-      $('ul.my_list').empty();
-    });
+$(document).ready(function () {
+  // Add new list item
+  $('#add_item').click(() => {
+    $('ul.my_list').append('<li>Item</li>');
   });
+
+  // Remove last list item
+  $('#remove_item').click(() => {
+    $('ul.my_list li:last-child').remove();
+  });
+
+  // Clear all list items
+  $('#clear_list').click(() => {
+    $('ul.my_list').empty();
+  });
+});
